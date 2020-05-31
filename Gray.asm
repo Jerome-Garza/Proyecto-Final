@@ -73,11 +73,11 @@ INITLCD
 
 INICIO	  
     
-    MOVF PORTA,W
-    MOVWF GRAY
-    BCF STATUS,C
-    RRF GRAY
-    XORWF GRAY,F
+    MOVF PORTA,W		;;
+    MOVWF GRAY			;;programa donde se convierte de bin a gray
+    BCF STATUS,C		;;
+    RRF GRAY			;;
+    XORWF GRAY,F		;;
     
     BCF PORTC,0		;command mode	;modo de instrucciones
     CALL time
@@ -135,9 +135,9 @@ INICIO
     
     
     BTFSS PORTA,7
-    CALL print0
+    CALL print0			;;si hay un cero en el registro 7 llama print0
     BTFSC PORTA,7
-    CALL print1
+    CALL print1			;;si hay un uno llama print1
     
     BTFSS PORTA,6
     CALL print0
